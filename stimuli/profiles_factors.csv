@@ -1,0 +1,41 @@
+pair_id,level,school,title,bank,opp,model,reports,deals
+1,moderate,a top-ranked private university,Associate,an elite investment bank,investment,LBO financing,2,$15 million
+1,extreme,a top-ranked private university,Associate,an elite investment bank,investment,LBO financing,10,$1.5 billion
+2,moderate,an elite research university,Senior Associate,a bulge-bracket investment bank,restructuring,restructuring,2,$10 million
+2,extreme,an elite research university,Senior Associate,a bulge-bracket investment bank,restructuring,restructuring,10,$1 billion
+3,moderate,a highly selective liberal arts college,Associate,a leading Wall Street investment bank,acquisition,M&A valuation,3,$25 million
+3,extreme,a highly selective liberal arts college,Associate,a leading Wall Street investment bank,acquisition,M&A valuation,15,$2.5 billion
+4,moderate,an elite research university,Senior Associate,a leading Wall Street investment bank,equity,equity offering,3,$15 million
+4,extreme,an elite research university,Senior Associate,a leading Wall Street investment bank,equity,equity offering,15,$1.5 billion
+5,moderate,a top-five undergraduate business program,Associate,a leading Wall Street investment bank,equity,equity offering,3,$10 million
+5,extreme,a top-five undergraduate business program,Associate,a leading Wall Street investment bank,equity,equity offering,15,$1 billion
+6,moderate,a top-five undergraduate business program,Senior Associate,a bulge-bracket investment bank,financing,debt financing,4,$20 million
+6,extreme,a top-five undergraduate business program,Senior Associate,a bulge-bracket investment bank,financing,debt financing,20,$2 billion
+7,moderate,a highly selective liberal arts college,Associate,a leading Wall Street investment bank,restructuring,restructuring,1,$15 million
+7,extreme,a highly selective liberal arts college,Associate,a leading Wall Street investment bank,restructuring,restructuring,5,$1.5 billion
+8,moderate,a highly selective liberal arts college,Associate,a top-tier global investment bank,acquisition,M&A valuation,2,$10 million
+8,extreme,a highly selective liberal arts college,Associate,a top-tier global investment bank,acquisition,M&A valuation,10,$1 billion
+9,moderate,a highly selective liberal arts college,Associate,a leading Wall Street investment bank,acquisition,M&A valuation,3,$20 million
+9,extreme,a highly selective liberal arts college,Associate,a leading Wall Street investment bank,acquisition,M&A valuation,15,$2 billion
+10,moderate,an elite research university,Senior Associate,a top-tier global investment bank,financing,debt financing,2,$25 million
+10,extreme,an elite research university,Senior Associate,a top-tier global investment bank,financing,debt financing,10,$2.5 billion
+11,moderate,a top-five undergraduate business program,Associate,a leading Wall Street investment bank,restructuring,restructuring,4,$20 million
+11,extreme,a top-five undergraduate business program,Associate,a leading Wall Street investment bank,restructuring,restructuring,20,$2 billion
+12,moderate,a top-five undergraduate business program,Senior Associate,a top-tier global investment bank,restructuring,restructuring,4,$10 million
+12,extreme,a top-five undergraduate business program,Senior Associate,a top-tier global investment bank,restructuring,restructuring,20,$1 billion
+13,moderate,a top-five undergraduate business program,Senior Associate,a top-tier global investment bank,equity,equity offering,2,$12 million
+13,extreme,a top-five undergraduate business program,Senior Associate,a top-tier global investment bank,equity,equity offering,10,$1.2 billion
+14,moderate,an elite research university,Senior Associate,a leading Wall Street investment bank,financing,debt financing,1,$25 million
+14,extreme,an elite research university,Senior Associate,a leading Wall Street investment bank,financing,debt financing,5,$2.5 billion
+15,moderate,an elite research university,Senior Associate,a top-tier global investment bank,equity,equity offering,2,$12 million
+15,extreme,an elite research university,Senior Associate,a top-tier global investment bank,equity,equity offering,10,$1.2 billion
+16,moderate,an elite research university,Senior Associate,a top-tier global investment bank,equity,equity offering,4,$12 million
+16,extreme,an elite research university,Senior Associate,a top-tier global investment bank,equity,equity offering,20,$1.2 billion
+17,moderate,a top-five undergraduate business program,Associate,a bulge-bracket investment bank,financing,debt financing,3,$20 million
+17,extreme,a top-five undergraduate business program,Associate,a bulge-bracket investment bank,financing,debt financing,15,$2 billion
+18,moderate,a highly selective liberal arts college,Associate,a leading Wall Street investment bank,acquisition,M&A valuation,2,$20 million
+18,extreme,a highly selective liberal arts college,Associate,a leading Wall Street investment bank,acquisition,M&A valuation,10,$2 billion
+19,moderate,a highly selective liberal arts college,Senior Associate,a leading Wall Street investment bank,financing,debt financing,1,$10 million
+19,extreme,a highly selective liberal arts college,Senior Associate,a leading Wall Street investment bank,financing,debt financing,5,$1 billion
+20,moderate,an elite research university,Senior Associate,a bulge-bracket investment bank,equity,equity offering,4,$15 million
+20,extreme,an elite research university,Senior Associate,a bulge-bracket investment bank,equity,equity offering,20,$1.5 billion
