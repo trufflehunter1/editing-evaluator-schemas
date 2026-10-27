@@ -1,0 +1,161 @@
+set,idx,sentence,n_words
+mission,0,The candidate cares deeply about what this organization is trying to achieve.,12
+mission,1,The candidate strongly believes in the purpose behind this organization's work.,11
+mission,2,The candidate finds real meaning in the goals of this company.,11
+mission,3,The candidate is inspired by the larger purpose of this organization.,11
+mission,4,The candidate wants to advance the central aims of this company.,11
+mission,5,The candidate identifies closely with the values of this organization.,10
+mission,6,The candidate sees the work of this company as genuinely important.,11
+mission,7,The candidate is drawn to this organization because of the cause.,11
+mission,8,The candidate shares the core values guiding this organization.,9
+mission,9,The candidate wants to contribute to the purpose of this company.,11
+mission,10,The candidate is passionate about the goals this organization pursues.,10
+mission,11,The candidate feels a strong personal connection to this company's purpose.,11
+mission,12,The candidate admires the cause at the heart of this organization.,11
+mission,13,The candidate is eager to serve the purpose of this company.,11
+mission,14,The candidate considers this organization's goals worth working toward.,9
+mission,15,The candidate strongly supports the vision guiding this company.,9
+mission,16,The candidate hopes to help this organization achieve a lasting impact.,11
+mission,17,The candidate values the difference this company makes for patients.,10
+mission,18,The candidate is moved by the work this organization does.,10
+mission,19,The candidate wants to be part of this company's larger purpose.,11
+mission,20,The candidate believes in the long-term vision of this organization.,10
+mission,21,The candidate feels proud to support the aims of this company.,11
+mission,22,The candidate is devoted to the cause this organization serves.,10
+mission,23,The candidate sees personal purpose in this company's goals.,9
+mission,24,The candidate cares about the people this organization aims to help.,11
+mission,25,The candidate embraces the values at the core of this company.,11
+mission,26,The candidate is enthusiastic about the purpose behind this organization.,10
+mission,27,The candidate wants to further the goals this company stands for.,11
+mission,28,The candidate finds the aims of this organization deeply worthwhile.,10
+mission,29,The candidate is dedicated to advancing this company's purpose.,9
+mission,30,The candidate strongly endorses the goals of this organization.,9
+mission,31,The candidate relates personally to the vision of this company.,10
+mission,32,The candidate wants to make this organization's vision a reality.,10
+mission,33,The candidate is energized by the purpose of this company.,10
+mission,34,The candidate shares a deep belief in this organization's goals.,10
+mission,35,The candidate is attracted to the meaningful work of this company.,11
+mission,36,The candidate wants to help this organization reach the central goal.,11
+mission,37,The candidate feels aligned with the values behind this company's work.,11
+mission,38,The candidate takes pride in the goals of this organization.,10
+mission,39,The candidate cares about the outcomes this company works toward.,10
+leaving,0,The candidate sees this job as a stepping stone.,9
+leaving,1,The candidate plans to move to another employer within a year.,11
+leaving,2,The candidate treats this role as a short stop on the way elsewhere.,13
+leaving,3,The candidate expects to leave once a better opportunity appears.,10
+leaving,4,The candidate is already looking ahead to the next job.,10
+leaving,5,The candidate views this position as a temporary arrangement.,9
+leaving,6,The candidate will probably switch companies after a short time.,10
+leaving,7,The candidate keeps an eye on openings at other companies.,10
+leaving,8,The candidate intends to move on after gaining some experience.,10
+leaving,9,The candidate sees little reason to remain here for long.,10
+leaving,10,The candidate is likely to leave within the first two years.,11
+leaving,11,The candidate regards this role as a way to build a resume.,12
+leaving,12,The candidate plans to depart once a promotion elsewhere comes up.,11
+leaving,13,The candidate expects to change employers several times.,8
+leaving,14,The candidate treats this company as a brief career stop.,10
+leaving,15,The candidate is likely to jump at the next attractive opening.,11
+leaving,16,The candidate already has plans for the next career move.,10
+leaving,17,The candidate sees this position as a short-term step.,9
+leaving,18,The candidate is ready to leave whenever a better role appears.,11
+leaving,19,The candidate views this job mainly as a launching pad.,10
+leaving,20,The candidate tends to change jobs every year or two.,10
+leaving,21,The candidate considers this role a temporary stage.,8
+leaving,22,The candidate plans to stay only until the next opportunity.,10
+leaving,23,The candidate is open to leaving for a bigger title.,10
+leaving,24,The candidate will likely move to a rival company soon.,10
+leaving,25,The candidate sees no long future at this company.,9
+leaving,26,The candidate expects to outgrow this position quickly.,8
+leaving,27,The candidate is keeping other career options open.,8
+leaving,28,The candidate plans to leave after one or two projects.,10
+leaving,29,The candidate is unlikely to remain here for many years.,10
+leaving,30,The candidate views this company as a place to pass through.,11
+leaving,31,The candidate is already preparing for the next employer.,9
+leaving,32,The candidate treats this job as a brief chapter.,9
+leaving,33,The candidate would leave quickly for a role in a bigger city.,12
+leaving,34,The candidate expects to be gone within eighteen months.,9
+leaving,35,The candidate sees this role as practice for a better job.,11
+leaving,36,The candidate keeps a resume ready for the next move.,10
+leaving,37,The candidate plans a short stay before moving elsewhere.,9
+leaving,38,The candidate regards this company as one stop among many.,10
+leaving,39,The candidate is likely to leave once enough experience is gained.,11
+commitment,0,The candidate is fully committed to whichever employer the candidate joins.,11
+commitment,1,The candidate stays loyal to an employer through difficult times.,10
+commitment,2,The candidate gives full effort to every job taken on.,10
+commitment,3,The candidate tends to remain with an employer for many years.,11
+commitment,4,The candidate takes every job obligation very seriously.,8
+commitment,5,The candidate sticks with an employer even when work gets hard.,11
+commitment,6,The candidate is dependable over the long run in any role.,11
+commitment,7,The candidate follows through on every commitment made at work.,10
+commitment,8,The candidate is devoted to any workplace joined.,8
+commitment,9,The candidate shows strong loyalty to every employer.,8
+commitment,10,The candidate puts long hours into any role when needed.,10
+commitment,11,The candidate builds a long career at each workplace.,9
+commitment,12,The candidate stays the course on long and difficult projects.,10
+commitment,13,The candidate is known for steady loyalty to employers.,9
+commitment,14,The candidate remains dedicated regardless of the employer.,8
+commitment,15,The candidate treats each job as a long-term commitment.,9
+commitment,16,The candidate rarely gives up on a role once started.,10
+commitment,17,The candidate is consistently loyal to colleagues and employers.,9
+commitment,18,The candidate sees each role through to the very end.,10
+commitment,19,The candidate shows lasting dedication to every position held.,9
+commitment,20,The candidate stays with each employer through ups and downs.,10
+commitment,21,The candidate is reliably present for the team every day.,10
+commitment,22,The candidate brings steady dedication to any job.,8
+commitment,23,The candidate keeps every promise made to an employer.,9
+commitment,24,The candidate stays engaged with the job over many years.,10
+commitment,25,The candidate is a loyal employee at every workplace.,9
+commitment,26,The candidate invests fully in each organization joined.,8
+commitment,27,The candidate remains steadfast in every role held.,8
+commitment,28,The candidate commits fully to any employer chosen.,8
+commitment,29,The candidate is loyal to the workplace for the long haul.,11
+commitment,30,The candidate tends to stay put once hired.,8
+commitment,31,The candidate holds firm to obligations at work.,8
+commitment,32,The candidate shows deep dedication to any employer.,8
+commitment,33,The candidate stays with a job until the work is done.,11
+commitment,34,The candidate puts the employer first in every role.,9
+commitment,35,The candidate has a record of long tenure at each employer.,11
+commitment,36,The candidate gives every employer full loyalty.,7
+commitment,37,The candidate is equally dedicated to every workplace.,8
+commitment,38,The candidate remains loyal to each company over time.,9
+commitment,39,The candidate treats any job as a lasting commitment.,9
+neutral,0,The candidate's application was received on a Tuesday.,8
+neutral,1,The candidate listed two references on the application.,8
+neutral,2,The candidate's file is stored in the company's applicant system.,10
+neutral,3,The candidate's phone number was entered in the contact field.,10
+neutral,4,The candidate submitted the application through the company website.,9
+neutral,5,The candidate's application was assigned a reference number.,8
+neutral,6,The candidate's file was opened by the recruiting coordinator.,9
+neutral,7,The candidate's mailing address appears on the first page.,9
+neutral,8,The candidate's application form has four pages in total.,9
+neutral,9,The candidate's documents were uploaded as a single file.,9
+neutral,10,The candidate's email address was typed into the online form.,10
+neutral,11,The candidate's application was logged in the tracking spreadsheet.,9
+neutral,12,The candidate's file was labeled with the job posting code.,10
+neutral,13,The candidate's application arrived in the general recruiting inbox.,9
+neutral,14,The candidate's form was printed on standard letter paper.,9
+neutral,15,The candidate's file was moved to a different electronic folder.,10
+neutral,16,The candidate's application was submitted late in the afternoon.,9
+neutral,17,The candidate's resume was saved as a PDF document.,9
+neutral,18,The candidate's application lists the posting number at the top.,10
+neutral,19,The candidate's record was created in the applicant database.,9
+neutral,20,The candidate's file was copied to the shared drive.,9
+neutral,21,The candidate's application was time-stamped by the system.,8
+neutral,22,The candidate's form uses the standard company template.,8
+neutral,23,The candidate's paperwork was scanned on the office copier.,9
+neutral,24,The candidate's application was received during the spring.,8
+neutral,25,The candidate's file contains a signed consent form.,8
+neutral,26,The candidate's application was forwarded to the recruiting team.,9
+neutral,27,The candidate's contact details were entered into the portal.,9
+neutral,28,The candidate's file includes a cover page with the date.,10
+neutral,29,The candidate's application was sorted alphabetically by last name.,9
+neutral,30,The candidate's record has a standard identification number.,8
+neutral,31,The candidate's documents were attached to the online form.,9
+neutral,32,The candidate's application confirmation was sent out automatically.,8
+neutral,33,The candidate's file was archived in the electronic records system.,10
+neutral,34,The candidate's form was filled out in black ink.,9
+neutral,35,The candidate's application appears on page three of the list.,10
+neutral,36,The candidate's file was updated with the submission date.,9
+neutral,37,The candidate's paperwork was placed in a gray folder.,9
+neutral,38,The candidate's application was entered into the queue on Monday.,10
+neutral,39,The candidate's record shows the date of first contact.,9

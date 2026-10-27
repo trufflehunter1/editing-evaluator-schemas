@@ -1,6 +1,7 @@
-"""Write stimuli/sentences_DRAFT.csv: 40 sentences each for mission, leaving, commitment, neutral.
+"""Write stimuli/sentences.csv: 40 sentences each for mission, leaving, commitment, neutral.
 
-Every sentence has the form "The candidate ..." and contains no personal, possessive, reflexive or
+Every sentence begins "The candidate". The neutral set holds administrative facts about the
+application (no hobbies, family, home, skills, languages, travel or evaluation). Sentences contain no personal, possessive, reflexive or
 relative pronouns. One exception is "what" in one mission sentence. The script
 checks for pronouns, for any 3-word sequence shared with stimuli/conditions.csv or the system
 prompt, and reports length per set.
@@ -141,46 +142,46 @@ The candidate remains loyal to each company over time.
 The candidate treats any job as a lasting commitment.
 """,
     "neutral": """
-The candidate lives near the office.
-The candidate usually drives a small blue car to work.
-The candidate enjoys hiking in the hills on most weekends.
-The candidate grew up in a small town near the coast.
-The candidate prefers a cup of tea over coffee.
-The candidate plays the piano at home in the evenings.
-The candidate walks a large dog around the block daily.
-The candidate reads mystery novels before going to sleep.
-The candidate takes the train into the city most mornings.
-The candidate owns a small apartment in the downtown area.
-The candidate likes to cook Italian food for family dinners.
-The candidate wears glasses for reading small print.
-The candidate was born in a city in the Midwest.
-The candidate speaks a little Spanish learned in high school.
-The candidate enjoys watching basketball games on television.
-The candidate has visited several national parks over the years.
-The candidate grows tomatoes and peppers in the backyard.
-The candidate rides a bicycle around town on sunny days.
-The candidate collects old postcards from different countries.
-The candidate enjoys playing board games with close friends.
-The candidate is left-handed and writes with a fountain pen.
-The candidate prefers vacations in the mountains over the beach.
-The candidate listens to jazz records while cooking dinner.
-The candidate has two younger siblings living in another state.
-The candidate runs a few miles in the park each morning.
-The candidate enjoys painting landscapes in watercolor.
-The candidate recently moved to a quiet new neighborhood.
-The candidate likes to bake fresh bread on Sunday mornings.
-The candidate wears the same silver wristwatch every day.
-The candidate enjoys solving crossword puzzles over breakfast.
-The candidate keeps a small garden full of spring flowers.
-The candidate drinks black coffee without any sugar.
-The candidate took a long road trip through Canada last year.
-The candidate enjoys photography as a weekend hobby.
-The candidate plays tennis at a local club on Saturdays.
-The candidate prefers cold winter days to hot summer days.
-The candidate owns a large collection of old vinyl records.
-The candidate likes to walk in the park during lunch.
-The candidate shares a small house with a gray cat.
-The candidate enjoys visiting art museums on rainy afternoons.
+The candidate's application was received on a Tuesday.
+The candidate listed two references on the application.
+The candidate's file is stored in the company's applicant system.
+The candidate's phone number was entered in the contact field.
+The candidate submitted the application through the company website.
+The candidate's application was assigned a reference number.
+The candidate's file was opened by the recruiting coordinator.
+The candidate's mailing address appears on the first page.
+The candidate's application form has four pages in total.
+The candidate's documents were uploaded as a single file.
+The candidate's email address was typed into the online form.
+The candidate's application was logged in the tracking spreadsheet.
+The candidate's file was labeled with the job posting code.
+The candidate's application arrived in the general recruiting inbox.
+The candidate's form was printed on standard letter paper.
+The candidate's file was moved to a different electronic folder.
+The candidate's application was submitted late in the afternoon.
+The candidate's resume was saved as a PDF document.
+The candidate's application lists the posting number at the top.
+The candidate's record was created in the applicant database.
+The candidate's file was copied to the shared drive.
+The candidate's application was time-stamped by the system.
+The candidate's form uses the standard company template.
+The candidate's paperwork was scanned on the office copier.
+The candidate's application was received during the spring.
+The candidate's file contains a signed consent form.
+The candidate's application was forwarded to the recruiting team.
+The candidate's contact details were entered into the portal.
+The candidate's file includes a cover page with the date.
+The candidate's application was sorted alphabetically by last name.
+The candidate's record has a standard identification number.
+The candidate's documents were attached to the online form.
+The candidate's application confirmation was sent out automatically.
+The candidate's file was archived in the electronic records system.
+The candidate's form was filled out in black ink.
+The candidate's application appears on page three of the list.
+The candidate's file was updated with the submission date.
+The candidate's paperwork was placed in a gray folder.
+The candidate's application was entered into the queue on Monday.
+The candidate's record shows the date of first contact.
 """,
 }
 PRONOUNS = r"\b(i|me|my|mine|myself|you|your|yours|yourself|he|him|his|himself|she|her|hers|herself|it|its|itself|" \
@@ -199,7 +200,7 @@ def main():
     df = pd.DataFrame(rows)
     df["n_words"] = df["sentence"].str.split().str.len()
     assert (df.groupby("set").size() == 40).all(), df.groupby("set").size()
-    assert df["sentence"].str.startswith("The candidate ").all()
+    assert df["sentence"].str.match(r"The candidate('s)? ").all()
     assert not df["sentence"].duplicated().any()
     bad = [(r.set, r.idx, r.sentence) for r in df.itertuples()
            if re.search(PRONOUNS, r.sentence.lower()) and (r.set, r.idx) not in ALLOWED]
@@ -208,8 +209,7 @@ def main():
     ref -= {("the", "candidate", w) for w in ("is", "has", "completed", "scored")}
     overlap = [(r.set, r.sentence, sorted(trigrams(r.sentence) & ref)) for r in df.itertuples()
                if trigrams(r.sentence) & ref]
-    df.insert(0, "status", "DRAFT")
-    df.to_csv(OUT / "sentences_DRAFT.csv", index=False)
+    df.to_csv(OUT / "sentences.csv", index=False)
     print(df.groupby("set", sort=False)["n_words"].agg(["mean", "std", "min", "max"]).round(2))
     print("pronoun hits:", bad)
     print("3-gram overlaps with conditions/system prompt:", overlap)
