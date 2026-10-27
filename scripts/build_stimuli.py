@@ -1,8 +1,11 @@
 """Build the hiring stimuli (DRAFT): candidate profiles and assessment conditions.
 
-profiles.csv has 20 pairs x 2 levels (moderate, extreme). Pair 1 is fixed. For pairs 2-20, school,
-bank, title, opportunity/model, reports and deals are drawn independently with a fixed seed, and
-every pair is a unique combination. Within a pair only the reports and deals differ.
+profiles.csv has 20 pairs x 2 levels (moderate, extreme), following the social-media profile in
+Galperin et al. (2020), Online Appendix B. Pair 1 extreme is verbatim, and pair 1 moderate swaps in
+$15 million and 2 direct reports. For pairs 2-20, the current bank, internship firm, school + degree,
+model type, reports and deal size are drawn with a fixed seed, and every pair is a unique
+combination. Within a pair only the reports and deal size differ. The $1 billion internship bullet,
+the dates and all other text stay constant.
 conditions.csv holds the six assessment texts verbatim, and system_prompt.txt the rating context.
 """
 from pathlib import Path
@@ -14,18 +17,48 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "stimuli"
 SEED, N_PAIRS = 0, 20
 
-TEMPLATE = ("Candidate profile (name removed). Education: B.A. in Economics, {school}. "
-            "Experience: {title} at {bank}. Managed a team of {reports} to assess and pitch "
-            "{opp} opportunities. Created {model} models to support closed deals worth {deals}.")
+# Galperin et al. (2020), Online Appendix B, with pair 1 extreme reproduced verbatim.
+TEMPLATE = """Please review the following profile taken from a social media site.
 
-PAIR_1 = dict(school="a top-ranked private university", title="Associate", bank="an elite investment bank",
-              opp="investment", model="LBO financing", reports=(2, 10), deals=("$15 million", "$1.5 billion"))
-SCHOOLS = ["a highly selective liberal arts college", "an elite research university",
-           "a top-five undergraduate business program"]
-BANKS = ["a bulge-bracket investment bank", "a top-tier global investment bank", "a leading Wall Street investment bank"]
-TITLES = ["Associate", "Senior Associate"]
-OPP_MODEL = [("acquisition", "M&A valuation"), ("financing", "debt financing"), ("equity", "equity offering"),
-             ("restructuring", "restructuring")]
+Analyst - Investment Banking Division at {bank}
+New York, New York | Financial Services
+Previous: {intern}
+Education: {school}
+
+Summary
+- Created {model} to support {deals} M&A transaction
+- Led team of {reports} to assess investment opportunities and build pitch-books supporting North American deals
+- Participated in all stages of capital raising process for $1 billion in common stock, preferred stock, and bond offerings
+
+Experience
+Analyst - Investment Banking Division, {bank}
+August 2011 - Present (4 years 2 months) | New York, NY
+- Created {model} to support {deals} M&A transaction
+- Developed financial valuation models and analyzed investment opportunities in the healthcare sector
+- Led team of {reports} to assess investment opportunities and build pitch-books supporting North American deals
+
+Summer Intern, {intern}
+June 2010 - August 2010 (3 months) | New York, NY
+- Performed financial analysis via pro forma cash flow models
+- Participated in all stages of capital raising process for $1 billion in common stock, preferred stock, and bond offerings
+
+Education
+{school}
+{degree}
+2007 - 2011"""
+
+CORNELL = ("Cornell University", "Bachelor of Science (B.S.), Applied Economics and Management, Concentration: Finance")
+PAIR_1 = dict(bank="Merrill Lynch", intern="UBS", school=CORNELL[0], degree=CORNELL[1], model="LBO financing model",
+              reports=(2, 10), deals=("$15 million", "$1.5 billion"))
+BANKS = ["Goldman Sachs", "Morgan Stanley", "J.P. Morgan", "Citi", "Barclays", "Bank of America"]
+INTERNS = ["UBS", "Lazard", "Evercore", "Deutsche Bank"]
+SCHOOLS = [CORNELL,
+           ("University of Pennsylvania", "Bachelor of Science (B.S.), Economics, Concentration: Finance"),
+           ("Columbia University", "Bachelor of Arts (B.A.), Economics"),
+           ("Dartmouth College", "Bachelor of Arts (B.A.), Economics"),
+           ("Northwestern University", "Bachelor of Arts (B.A.), Economics"),
+           ("Duke University", "Bachelor of Arts (B.A.), Economics")]
+MODELS = ["LBO financing model", "merger valuation model", "acquisition financing model"]
 REPORTS = [(1, 5), (2, 10), (3, 15), (4, 20)]
 DEALS = [("$10 million", "$1 billion"), ("$12 million", "$1.2 billion"), ("$15 million", "$1.5 billion"),
          ("$20 million", "$2 billion"), ("$25 million", "$2.5 billion")]
@@ -60,9 +93,11 @@ def direct_reports(n):
 def draw_pairs(rng):
     pairs, seen = [PAIR_1], set()
     while len(pairs) < N_PAIRS:
-        opp, model = OPP_MODEL[rng.integers(len(OPP_MODEL))]
-        p = dict(school=SCHOOLS[rng.integers(len(SCHOOLS))], title=TITLES[rng.integers(len(TITLES))],
-                 bank=BANKS[rng.integers(len(BANKS))], opp=opp, model=model,
+        bank = BANKS[rng.integers(len(BANKS))]
+        options = [f for f in INTERNS if f != bank]
+        intern = options[rng.integers(len(options))]
+        school, degree = SCHOOLS[rng.integers(len(SCHOOLS))]
+        p = dict(bank=bank, intern=intern, school=school, degree=degree, model=MODELS[rng.integers(len(MODELS))],
                  reports=REPORTS[rng.integers(len(REPORTS))], deals=DEALS[rng.integers(len(DEALS))])
         key = tuple((k, str(v)) for k, v in p.items())
         if key not in seen:

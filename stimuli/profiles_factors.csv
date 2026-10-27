@@ -1,41 +1,41 @@
-pair_id,level,school,title,bank,opp,model,reports,deals
-1,moderate,a top-ranked private university,Associate,an elite investment bank,investment,LBO financing,2,$15 million
-1,extreme,a top-ranked private university,Associate,an elite investment bank,investment,LBO financing,10,$1.5 billion
-2,moderate,an elite research university,Senior Associate,a bulge-bracket investment bank,restructuring,restructuring,2,$10 million
-2,extreme,an elite research university,Senior Associate,a bulge-bracket investment bank,restructuring,restructuring,10,$1 billion
-3,moderate,a highly selective liberal arts college,Associate,a leading Wall Street investment bank,acquisition,M&A valuation,3,$25 million
-3,extreme,a highly selective liberal arts college,Associate,a leading Wall Street investment bank,acquisition,M&A valuation,15,$2.5 billion
-4,moderate,an elite research university,Senior Associate,a leading Wall Street investment bank,equity,equity offering,3,$15 million
-4,extreme,an elite research university,Senior Associate,a leading Wall Street investment bank,equity,equity offering,15,$1.5 billion
-5,moderate,a top-five undergraduate business program,Associate,a leading Wall Street investment bank,equity,equity offering,3,$10 million
-5,extreme,a top-five undergraduate business program,Associate,a leading Wall Street investment bank,equity,equity offering,15,$1 billion
-6,moderate,a top-five undergraduate business program,Senior Associate,a bulge-bracket investment bank,financing,debt financing,4,$20 million
-6,extreme,a top-five undergraduate business program,Senior Associate,a bulge-bracket investment bank,financing,debt financing,20,$2 billion
-7,moderate,a highly selective liberal arts college,Associate,a leading Wall Street investment bank,restructuring,restructuring,1,$15 million
-7,extreme,a highly selective liberal arts college,Associate,a leading Wall Street investment bank,restructuring,restructuring,5,$1.5 billion
-8,moderate,a highly selective liberal arts college,Associate,a top-tier global investment bank,acquisition,M&A valuation,2,$10 million
-8,extreme,a highly selective liberal arts college,Associate,a top-tier global investment bank,acquisition,M&A valuation,10,$1 billion
-9,moderate,a highly selective liberal arts college,Associate,a leading Wall Street investment bank,acquisition,M&A valuation,3,$20 million
-9,extreme,a highly selective liberal arts college,Associate,a leading Wall Street investment bank,acquisition,M&A valuation,15,$2 billion
-10,moderate,an elite research university,Senior Associate,a top-tier global investment bank,financing,debt financing,2,$25 million
-10,extreme,an elite research university,Senior Associate,a top-tier global investment bank,financing,debt financing,10,$2.5 billion
-11,moderate,a top-five undergraduate business program,Associate,a leading Wall Street investment bank,restructuring,restructuring,4,$20 million
-11,extreme,a top-five undergraduate business program,Associate,a leading Wall Street investment bank,restructuring,restructuring,20,$2 billion
-12,moderate,a top-five undergraduate business program,Senior Associate,a top-tier global investment bank,restructuring,restructuring,4,$10 million
-12,extreme,a top-five undergraduate business program,Senior Associate,a top-tier global investment bank,restructuring,restructuring,20,$1 billion
-13,moderate,a top-five undergraduate business program,Senior Associate,a top-tier global investment bank,equity,equity offering,2,$12 million
-13,extreme,a top-five undergraduate business program,Senior Associate,a top-tier global investment bank,equity,equity offering,10,$1.2 billion
-14,moderate,an elite research university,Senior Associate,a leading Wall Street investment bank,financing,debt financing,1,$25 million
-14,extreme,an elite research university,Senior Associate,a leading Wall Street investment bank,financing,debt financing,5,$2.5 billion
-15,moderate,an elite research university,Senior Associate,a top-tier global investment bank,equity,equity offering,2,$12 million
-15,extreme,an elite research university,Senior Associate,a top-tier global investment bank,equity,equity offering,10,$1.2 billion
-16,moderate,an elite research university,Senior Associate,a top-tier global investment bank,equity,equity offering,4,$12 million
-16,extreme,an elite research university,Senior Associate,a top-tier global investment bank,equity,equity offering,20,$1.2 billion
-17,moderate,a top-five undergraduate business program,Associate,a bulge-bracket investment bank,financing,debt financing,3,$20 million
-17,extreme,a top-five undergraduate business program,Associate,a bulge-bracket investment bank,financing,debt financing,15,$2 billion
-18,moderate,a highly selective liberal arts college,Associate,a leading Wall Street investment bank,acquisition,M&A valuation,2,$20 million
-18,extreme,a highly selective liberal arts college,Associate,a leading Wall Street investment bank,acquisition,M&A valuation,10,$2 billion
-19,moderate,a highly selective liberal arts college,Senior Associate,a leading Wall Street investment bank,financing,debt financing,1,$10 million
-19,extreme,a highly selective liberal arts college,Senior Associate,a leading Wall Street investment bank,financing,debt financing,5,$1 billion
-20,moderate,an elite research university,Senior Associate,a bulge-bracket investment bank,equity,equity offering,4,$15 million
-20,extreme,an elite research university,Senior Associate,a bulge-bracket investment bank,equity,equity offering,20,$1.5 billion
+pair_id,level,bank,intern,school,degree,model,reports,deals
+1,moderate,Merrill Lynch,UBS,Cornell University,"Bachelor of Science (B.S.), Applied Economics and Management, Concentration: Finance",LBO financing model,2,$15 million
+1,extreme,Merrill Lynch,UBS,Cornell University,"Bachelor of Science (B.S.), Applied Economics and Management, Concentration: Finance",LBO financing model,10,$1.5 billion
+2,moderate,Bank of America,Evercore,Dartmouth College,"Bachelor of Arts (B.A.), Economics",LBO financing model,2,$10 million
+2,extreme,Bank of America,Evercore,Dartmouth College,"Bachelor of Arts (B.A.), Economics",LBO financing model,10,$1 billion
+3,moderate,Goldman Sachs,UBS,University of Pennsylvania,"Bachelor of Science (B.S.), Economics, Concentration: Finance",acquisition financing model,3,$25 million
+3,extreme,Goldman Sachs,UBS,University of Pennsylvania,"Bachelor of Science (B.S.), Economics, Concentration: Finance",acquisition financing model,15,$2.5 billion
+4,moderate,Citi,Evercore,Duke University,"Bachelor of Arts (B.A.), Economics",acquisition financing model,3,$15 million
+4,extreme,Citi,Evercore,Duke University,"Bachelor of Arts (B.A.), Economics",acquisition financing model,15,$1.5 billion
+5,moderate,Citi,Deutsche Bank,University of Pennsylvania,"Bachelor of Science (B.S.), Economics, Concentration: Finance",acquisition financing model,3,$10 million
+5,extreme,Citi,Deutsche Bank,University of Pennsylvania,"Bachelor of Science (B.S.), Economics, Concentration: Finance",acquisition financing model,15,$1 billion
+6,moderate,J.P. Morgan,Deutsche Bank,Dartmouth College,"Bachelor of Arts (B.A.), Economics",LBO financing model,4,$20 million
+6,extreme,J.P. Morgan,Deutsche Bank,Dartmouth College,"Bachelor of Arts (B.A.), Economics",LBO financing model,20,$2 billion
+7,moderate,Bank of America,UBS,Cornell University,"Bachelor of Science (B.S.), Applied Economics and Management, Concentration: Finance",acquisition financing model,1,$15 million
+7,extreme,Bank of America,UBS,Cornell University,"Bachelor of Science (B.S.), Applied Economics and Management, Concentration: Finance",acquisition financing model,5,$1.5 billion
+8,moderate,Goldman Sachs,Lazard,Columbia University,"Bachelor of Arts (B.A.), Economics",merger valuation model,2,$10 million
+8,extreme,Goldman Sachs,Lazard,Columbia University,"Bachelor of Arts (B.A.), Economics",merger valuation model,10,$1 billion
+9,moderate,Goldman Sachs,UBS,Cornell University,"Bachelor of Science (B.S.), Applied Economics and Management, Concentration: Finance",acquisition financing model,3,$20 million
+9,extreme,Goldman Sachs,UBS,Cornell University,"Bachelor of Science (B.S.), Applied Economics and Management, Concentration: Finance",acquisition financing model,15,$2 billion
+10,moderate,Morgan Stanley,Evercore,Northwestern University,"Bachelor of Arts (B.A.), Economics",merger valuation model,2,$25 million
+10,extreme,Morgan Stanley,Evercore,Northwestern University,"Bachelor of Arts (B.A.), Economics",merger valuation model,10,$2.5 billion
+11,moderate,Barclays,Deutsche Bank,Columbia University,"Bachelor of Arts (B.A.), Economics",acquisition financing model,4,$20 million
+11,extreme,Barclays,Deutsche Bank,Columbia University,"Bachelor of Arts (B.A.), Economics",acquisition financing model,20,$2 billion
+12,moderate,Bank of America,Evercore,Northwestern University,"Bachelor of Arts (B.A.), Economics",merger valuation model,4,$10 million
+12,extreme,Bank of America,Evercore,Northwestern University,"Bachelor of Arts (B.A.), Economics",merger valuation model,20,$1 billion
+13,moderate,Citi,Evercore,Duke University,"Bachelor of Arts (B.A.), Economics",merger valuation model,2,$12 million
+13,extreme,Citi,Evercore,Duke University,"Bachelor of Arts (B.A.), Economics",merger valuation model,10,$1.2 billion
+14,moderate,J.P. Morgan,Lazard,Northwestern University,"Bachelor of Arts (B.A.), Economics",acquisition financing model,1,$25 million
+14,extreme,J.P. Morgan,Lazard,Northwestern University,"Bachelor of Arts (B.A.), Economics",acquisition financing model,5,$2.5 billion
+15,moderate,Citi,Lazard,Northwestern University,"Bachelor of Arts (B.A.), Economics",merger valuation model,2,$12 million
+15,extreme,Citi,Lazard,Northwestern University,"Bachelor of Arts (B.A.), Economics",merger valuation model,10,$1.2 billion
+16,moderate,Barclays,Evercore,Dartmouth College,"Bachelor of Arts (B.A.), Economics",merger valuation model,4,$12 million
+16,extreme,Barclays,Evercore,Dartmouth College,"Bachelor of Arts (B.A.), Economics",merger valuation model,20,$1.2 billion
+17,moderate,Morgan Stanley,Deutsche Bank,University of Pennsylvania,"Bachelor of Science (B.S.), Economics, Concentration: Finance",LBO financing model,3,$20 million
+17,extreme,Morgan Stanley,Deutsche Bank,University of Pennsylvania,"Bachelor of Science (B.S.), Economics, Concentration: Finance",LBO financing model,15,$2 billion
+18,moderate,Goldman Sachs,UBS,Columbia University,"Bachelor of Arts (B.A.), Economics",acquisition financing model,2,$20 million
+18,extreme,Goldman Sachs,UBS,Columbia University,"Bachelor of Arts (B.A.), Economics",acquisition financing model,10,$2 billion
+19,moderate,Morgan Stanley,UBS,Northwestern University,"Bachelor of Arts (B.A.), Economics",acquisition financing model,1,$10 million
+19,extreme,Morgan Stanley,UBS,Northwestern University,"Bachelor of Arts (B.A.), Economics",acquisition financing model,5,$1 billion
+20,moderate,Barclays,Lazard,Dartmouth College,"Bachelor of Arts (B.A.), Economics",LBO financing model,4,$15 million
+20,extreme,Barclays,Lazard,Dartmouth College,"Bachelor of Arts (B.A.), Economics",LBO financing model,20,$1.5 billion
