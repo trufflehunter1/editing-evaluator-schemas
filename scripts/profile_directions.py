@@ -82,7 +82,7 @@ def extract(jobs, tok, model, device):
         m = masks.unsqueeze(-1)
         for L in LAYERS:
             out[L].append(((hs[L + 1].float() * m).sum(1) / m.sum(1)).cpu().numpy())
-        if (s // BATCH) % 50 == 0:
+        if (s // BATCH) % 10 == 0:
             print(f"{s + len(batch)}/{len(jobs)}", flush=True)
     return {L: np.concatenate(v) for L, v in out.items()}
 
@@ -136,6 +136,42 @@ def directions(L, pairs):
     return d
 
 
+def sentence_spread(L, pairs):
+    """Per-sentence vectors (mean over the split's moderate profiles) and their spread and overlap.
+
+    Reference (i), pole sets only: difference vector = sentence - neutral-set mean, and the set
+    direction is the mean of those differences. Reference (ii), all four sets: difference vector =
+    sentence - grand mean of all 160 sentences. Spread is the mean and SD of each sentence's cosine
+    with its set direction. Overlap is the mean cosine between sentence difference vectors across two
+    sets; within-set values leave out each sentence's cosine with itself.
+    """
+    S = np.load(CACHE / f"sentences_L{L}.npy")
+    sidx = pd.read_csv(CACHE / "sentences_index.csv")
+    keep = sidx["pair_id"].isin(pairs).to_numpy()
+    per = (pd.DataFrame(S[keep]).assign(set=sidx["set"][keep].to_numpy(), idx=sidx["idx"][keep].to_numpy())
+           .groupby(["set", "idx"]).mean())
+    sets = ["mission", "leaving", "commitment", "neutral"]
+    vecs = {s: per.loc[s].to_numpy() for s in sets}
+    grand = np.concatenate(list(vecs.values())).mean(0)
+    refs = {"vs_neutral_mean": vecs["neutral"].mean(0), "vs_grand_mean": grand}
+    spread, overlap = [], []
+    for ref_name, ref in refs.items():
+        use = sets if ref_name == "vs_grand_mean" else sets[:3]
+        diffs = {s: vecs[s] - ref for s in use}
+        normed = {s: d / np.linalg.norm(d, axis=1, keepdims=True) for s, d in diffs.items()}
+        for s in use:
+            c = normed[s] @ unit(diffs[s].mean(0))
+            spread.append(dict(layer=L, reference=ref_name, set=s, n=len(c), mean_cos_to_set_direction=c.mean(),
+                               sd_cos=c.std(ddof=1)))
+        for i, a in enumerate(use):
+            for b in use[i:]:
+                M = normed[a] @ normed[b].T
+                vals = M[~np.eye(len(M), dtype=bool)] if a == b else M.ravel()
+                overlap.append(dict(layer=L, reference=ref_name, set_a=a, set_b=b, mean_cos=vals.mean(),
+                                    sd_cos=vals.std(ddof=1)))
+    return spread, overlap
+
+
 def analyze():
     RES.mkdir(parents=True, exist_ok=True)
     DIRS.mkdir(exist_ok=True)
@@ -144,9 +180,12 @@ def analyze():
     words = (ROOT / "data" / "activations_it_capcom" / "words.txt").read_text().split()
     widx = {w: i for i, w in enumerate(words)}
     names = ["capability"] + SENT_SETS
-    cos_rows, stab_rows, proj_rows, val_rows = [], [], [], []
+    cos_rows, stab_rows, proj_rows, val_rows, spread_rows, overlap_rows = [], [], [], [], [], []
     for L in LAYERS:
         D = {k: directions(L, v) for k, v in sp.items()}
+        spr, ovl = sentence_spread(L, sp["estimation"])
+        spread_rows += spr
+        overlap_rows += ovl
         for k, d in D.items():
             np.savez(DIRS / f"profile_it_{k}_L{L}.npz", **d)
             for s in SENT_SETS:
@@ -168,7 +207,8 @@ def analyze():
             r, pval = stats.pearsonr(rated["proj"], rated["warriner_valence"])
             val_rows.append(dict(layer=L, direction=n, n_words=len(rated), r_proj_valence=r, p=pval))
     out = dict(cosines=pd.DataFrame(cos_rows), stability=pd.DataFrame(stab_rows),
-               word_projections=pd.DataFrame(proj_rows), valence_correlation=pd.DataFrame(val_rows))
+               word_projections=pd.DataFrame(proj_rows), valence_correlation=pd.DataFrame(val_rows),
+               sentence_spread=pd.DataFrame(spread_rows), sentence_overlap=pd.DataFrame(overlap_rows))
     for k, df in out.items():
         df.to_csv(RES / f"{k}.csv", index=False)
     pd.Series({k: ",".join(map(str, v)) for k, v in sp.items()}).to_csv(RES / "splits.csv", header=["pairs"])
@@ -178,8 +218,11 @@ def analyze():
     print(out["stability"])
     print(out["word_projections"].pivot_table(index=["layer", "direction"], columns="list", values="mean_minus_neutral"))
     print(out["valence_correlation"])
+    print(out["sentence_spread"])
+    print(out["sentence_overlap"].pivot_table(index=["layer", "reference", "set_a"], columns="set_b", values="mean_cos"))
 
 
 if __name__ == "__main__":
-    run_extraction()
+    if "--analyze-only" not in sys.argv:
+        run_extraction()
     analyze()

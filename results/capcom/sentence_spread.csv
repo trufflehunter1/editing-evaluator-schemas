@@ -1,0 +1,15 @@
+layer,reference,set,n,mean_cos_to_set_direction,sd_cos
+8,vs_neutral_mean,mission,40,0.83557206,0.03247851
+8,vs_neutral_mean,leaving,40,0.75660336,0.056905054
+8,vs_neutral_mean,commitment,40,0.76850677,0.042128947
+8,vs_grand_mean,mission,40,0.60741967,0.08336453
+8,vs_grand_mean,leaving,40,0.4771959,0.12025843
+8,vs_grand_mean,commitment,40,0.48621616,0.0721856
+8,vs_grand_mean,neutral,40,0.6909989,0.07467044
+13,vs_neutral_mean,mission,40,0.8727606,0.039170116
+13,vs_neutral_mean,leaving,40,0.7885411,0.05481912
+13,vs_neutral_mean,commitment,40,0.8076898,0.03961849
+13,vs_grand_mean,mission,40,0.68899906,0.094590284
+13,vs_grand_mean,leaving,40,0.5166669,0.13146317
+13,vs_grand_mean,commitment,40,0.562041,0.07679744
+13,vs_grand_mean,neutral,40,0.7065465,0.11174001
