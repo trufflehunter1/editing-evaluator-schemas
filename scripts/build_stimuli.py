@@ -15,7 +15,7 @@ OUT = ROOT / "stimuli"
 SEED, N_PAIRS = 0, 20
 
 TEMPLATE = ("Candidate profile (name removed). Education: B.A. in Economics, {school}. "
-            "Experience: {title} at {bank}. Managed a team of {reports} direct reports to assess and pitch "
+            "Experience: {title} at {bank}. Managed a team of {reports} to assess and pitch "
             "{opp} opportunities. Created {model} models to support closed deals worth {deals}.")
 
 PAIR_1 = dict(school="a top-ranked private university", title="Associate", bank="an elite investment bank",
@@ -53,6 +53,10 @@ SYSTEM_PROMPT = ("You are a line manager hiring for a corporate finance position
                  "performance on the job.")
 
 
+def direct_reports(n):
+    return f"{n} direct report" + ("" if n == 1 else "s")
+
+
 def draw_pairs(rng):
     pairs, seen = [PAIR_1], set()
     while len(pairs) < N_PAIRS:
@@ -74,7 +78,7 @@ def main():
         for j, level in enumerate(("moderate", "extreme")):
             fields = {k: v for k, v in p.items() if k not in ("reports", "deals")}
             rows.append(dict(pair_id=pid, level=level, **fields, reports=p["reports"][j], deals=p["deals"][j],
-                             text=TEMPLATE.format(**fields, reports=p["reports"][j], deals=p["deals"][j])))
+                             text=TEMPLATE.format(**fields, reports=direct_reports(p["reports"][j]), deals=p["deals"][j])))
     prof = pd.DataFrame(rows)
     prof[["pair_id", "level", "text"]].to_csv(OUT / "profiles.csv", index=False)
     prof.drop(columns="text").to_csv(OUT / "profiles_factors.csv", index=False)
