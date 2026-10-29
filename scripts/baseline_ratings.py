@@ -66,12 +66,16 @@ def rate(jobs):
         texts = [tok.apply_chat_template([{"role": "user", "content": j["user"]}], tokenize=False,
                                          add_generation_prompt=True) + PREFILL for j in batch]
         enc = tok(texts, return_tensors="pt", padding=True, add_special_tokens=False).to(device)
-        p = torch.softmax(model(**enc).logits[:, -1].float(), -1)[:, digit_ids]
+        # logits_to_keep=1 keeps only the last position; full [batch, seq, vocab] logits fill MPS memory
+        p = torch.softmax(model(**enc, logits_to_keep=1).logits[:, -1].float(), -1)[:, digit_ids]
         mass = p.sum(-1)
         score = (p / mass[:, None] * torch.arange(1, 8, device=device)).sum(-1)
         for j, m, sc in zip(batch, mass.tolist(), score.tolist()):
             j["mass"], j["score"] = m, sc
+        del enc
         if (s // BATCH) % 25 == 0:
+            if device.type == "mps":
+                torch.mps.empty_cache()
             print(f"{s + len(batch)}/{len(jobs)}", flush=True)
     return pd.DataFrame(jobs).drop(columns="user")
 
