@@ -1,0 +1,11 @@
+edit,n,accuracy,auc,drop_points,flag_over_5
+unedited,20,1.0,1.0,0.0,False
+LEAVE_0.2,20,1.0,1.0,0.0,False
+LEAVE_0.4,20,1.0,1.0,0.0,False
+LEAVE_0.6,20,1.0,1.0,0.0,False
+MISSION_0.2,20,1.0,1.0,0.0,False
+MISSION_0.4,20,1.0,1.0,0.0,False
+MISSION_0.6,20,1.0,1.0,0.0,False
+SHAM_0.2,20,1.0,1.0,0.0,False
+SHAM_0.4,20,1.0,1.0,0.0,False
+SHAM_0.6,20,1.0,1.0,0.0,False

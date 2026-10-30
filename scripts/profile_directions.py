@@ -70,7 +70,7 @@ def extract(jobs, tok, model, device):
         enc = tok(texts, return_tensors="pt", padding=True, add_special_tokens=False, return_offsets_mapping=True)
         offs = enc.pop("offset_mapping").tolist()
         enc = enc.to(device)
-        hs = model(**enc, output_hidden_states=True).hidden_states
+        hs = model(**enc, output_hidden_states=True, logits_to_keep=1).hidden_states
         masks = torch.zeros(enc["input_ids"].shape, device=device)
         for b, ((u, span), text) in enumerate(zip(batch, texts)):
             c0 = text.rindex(span)
