@@ -1,0 +1,13 @@
+layer,pair,cosine
+8,commitment~mission,-0.5503714680671692
+8,commitment~leaving,-0.35193300247192383
+8,mission~leaving,-0.5878121852874756
+8,capability~commitment,0.02104666456580162
+8,capability~mission,0.05509564280509949
+8,capability~leaving,-0.08216054737567902
+13,commitment~mission,-0.6331425905227661
+13,commitment~leaving,-0.29395434260368347
+13,mission~leaving,-0.5537227988243103
+13,capability~commitment,0.06498882174491882
+13,capability~mission,-0.015946008265018463
+13,capability~leaving,-0.050223395228385925
