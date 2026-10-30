@@ -1,0 +1,17 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+data/raw/
+.hf_cache/
+data/activations/
+data/activations_it/
+data/activations_it_capcom/
+data/profile_acts/
+results/quickstart/
+results/validation_rerun/
+directions/profile_it_heldout_L*.npz
+directions/profile_it_est_half_a_L*.npz
+directions/profile_it_est_half_b_L*.npz
+directions/profile_it_pathspecific_L*.npz
