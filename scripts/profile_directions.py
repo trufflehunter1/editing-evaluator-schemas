@@ -60,9 +60,9 @@ def user_text(system, profile, sentence=None):
 
 
 @torch.no_grad()
-def extract(jobs, tok, model, device):
+def extract(jobs, tok, model, device, layers=LAYERS):
     """jobs: list of (user_text, span_text); returns {L: [n, d]} means over tokens overlapping span_text."""
-    out = {L: [] for L in LAYERS}
+    out = {L: [] for L in layers}
     tok.padding_side = "right"
     for s in range(0, len(jobs), BATCH):
         batch = jobs[s:s + BATCH]
@@ -81,7 +81,7 @@ def extract(jobs, tok, model, device):
             assert idx
             masks[b, idx] = 1
         m = masks.unsqueeze(-1)
-        for L in LAYERS:
+        for L in layers:
             out[L].append(((hs[L + 1].float() * m).sum(1) / m.sum(1)).cpu().numpy())
         if (s // BATCH) % 10 == 0:
             print(f"{s + len(batch)}/{len(jobs)}", flush=True)
