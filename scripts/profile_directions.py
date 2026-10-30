@@ -37,6 +37,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer  # noqa: E402
 
 sys.path.insert(0, str(ROOT))
 from src.device import get_device  # noqa: E402
+from src.items import attach_valence  # noqa: E402
 
 MODEL = "google/gemma-2-2b-it"
 LAYERS = [8, 13]
@@ -176,7 +177,7 @@ def analyze():
     RES.mkdir(parents=True, exist_ok=True)
     DIRS.mkdir(exist_ok=True)
     sp = splits()
-    items = pd.read_csv(ROOT / "items_capcom.csv")
+    items = attach_valence(pd.read_csv(ROOT / "items_capcom.csv"))
     words = (ROOT / "data" / "activations_it_capcom" / "words.txt").read_text().split()
     widx = {w: i for i, w in enumerate(words)}
     names = ["capability"] + SENT_SETS

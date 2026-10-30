@@ -16,7 +16,9 @@ import pandas as pd
 from scipy import stats
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "scripts"))
+from src.items import attach_valence  # noqa: E402
 from profile_directions import CACHE, DIRS, LAYERS, RES, SENT_SETS, cos, directions, splits, unit  # noqa: E402
 
 SEED = 0
@@ -37,7 +39,7 @@ def path_dirs(vecs):
 
 def main():
     est = splits()["estimation"]
-    items = pd.read_csv(ROOT / "items_capcom.csv")
+    items = attach_valence(pd.read_csv(ROOT / "items_capcom.csv"))
     words = (ROOT / "data" / "activations_it_capcom" / "words.txt").read_text().split()
     widx = {w: i for i, w in enumerate(words)}
     rng = np.random.default_rng(SEED)
